@@ -15,18 +15,15 @@ body {
     background-color: #000;
     color: #fff;
     overflow: hidden;
-    /* 페이지 스크롤만 막음 (클리핑 아님) */
 }
 
 /* ===================== 비네트 ===================== */
-/* 비네트는 순수 시각효과: 카드보다 아래 */
 .vignette {
     position: fixed;
     inset: 0;
     pointer-events: none;
     background: radial-gradient(ellipse at center, transparent 60%, rgba(0, 0, 0, 0.8) 100%);
     z-index: 20;
-    /* 카드가 이보다 위 */
 }
 
 /* ===================== 전체 레이아웃 ===================== */
@@ -38,7 +35,6 @@ body {
     padding: clamp(2rem, 4vw, 4rem);
     height: 100%;
     overflow: visible;
-    /* 🔥 클리핑 방지 */
 }
 
 /* ===================== 왼쪽 정보 패널 ===================== */
@@ -46,7 +42,6 @@ body {
     width: clamp(300px, 20vw, 480px);
     position: relative;
     z-index: 100;
-    /* 기본적으로 상단 */
 }
 
 .project-title {
@@ -101,7 +96,6 @@ body {
 .book-grid {
     position: relative;
     z-index: 200;
-    /* info-panel(100)보다 위로 */
     display: flex;
     gap: clamp(32px, 3.5vw, 70px);
     perspective: 1600px;
@@ -109,26 +103,19 @@ body {
     align-items: center;
     transform: translateY(3.5vh);
     opacity: 0;
-    /* 초기엔 숨김 */
     transition: opacity 0.25s ease 0s;
-    /* 준비되면 페이드인 */
     will-change: opacity, transform;
     overflow: visible;
-    /* 🔥 클리핑 방지 */
 }
 
 .book-grid.grid-top {
     z-index: 400;
 }
 
-/* 호버 중 최상단으로 끌어올림 */
-
-/* 초기 상태에서 애니메이션 정지 */
 .preinit .book-column {
     animation-play-state: paused !important;
 }
 
-/* 준비 완료되면 그리드 표시 & 애니메이션 가동 */
 .ready .book-grid {
     opacity: 1;
 }
@@ -137,7 +124,6 @@ body {
     animation-play-state: running;
 }
 
-/* 배경 dim(오버레이 대체) */
 .book-grid.dim .book {
     filter: brightness(0.45) saturate(0.95);
 }
@@ -148,17 +134,27 @@ body {
 }
 
 /* ===================== 열 & 카드 ===================== */
+/* 불규칙한 모션 버전 */
 .book-column {
     pointer-events: auto;
-    /* 부모에서 이벤트 막지 않기 */
     position: relative;
     display: flex;
     flex-direction: column;
     gap: clamp(24px, 2.2vw, 52px);
-    transform: rotateY(-25deg) rotateX(8deg) scale(1.02) translateZ(0);
-    animation: float 85s linear infinite;
+
+    /* ▼ 커스텀 변수 (열마다 달라짐) */
+    --rotY: -25deg;
+    --rotX: 8deg;
+    --tiltZ: 0.2deg;
+    --amp: 150px;
+    --dur: 85s;
+    --phase: 0s;
+
+    transform: rotateY(var(--rotY)) rotateX(var(--rotX)) rotateZ(var(--tiltZ)) translateZ(0);
+    animation: float var(--dur) linear infinite;
+    animation-delay: var(--phase);
     will-change: transform;
-    transition: transform 0.4s ease;
+    transition: transform 0.8s ease;
     backface-visibility: hidden;
     overflow: visible;
     z-index: 31;
@@ -168,24 +164,64 @@ body {
     z-index: 300;
 }
 
-/* info-panel보다 위 */
+/* 열별 불규칙성 */
+.book-column:nth-child(odd) {
+    --dur: 76s;
+    --amp: 140px;
+    --tiltZ: 0.15deg;
+}
+
+.book-column:nth-child(even) {
+    --dur: 64s;
+    --amp: 110px;
+    --tiltZ: -0.15deg;
+}
+
+.book-column:nth-child(3n) {
+    --phase: -10s;
+    --amp: 165px;
+}
+
+.book-column:nth-child(4n) {
+    --dur: 92s;
+    --amp: 190px;
+    --phase: -22s;
+}
+
+.book-column:nth-child(5n) {
+    --amp: 210px;
+}
+
+.book-column:nth-child(6n) {
+    --dur: 58s;
+    --amp: 120px;
+    --phase: -35s;
+}
+
+.book-column:first-child {
+    --tiltZ: -0.3deg;
+}
+
+.book-column:last-child {
+    --tiltZ: 0.3deg;
+}
 
 /* 세로 부드러운 이동 */
 @keyframes float {
     0% {
-        transform: rotateY(-25deg) rotateX(8deg) translateY(0) translateZ(0);
+        transform: rotateY(var(--rotY)) rotateX(var(--rotX)) rotateZ(var(--tiltZ)) translateY(0) translateZ(0);
     }
 
     50% {
-        transform: rotateY(-25deg) rotateX(8deg) translateY(-150px) translateZ(0);
+        transform: rotateY(var(--rotY)) rotateX(var(--rotX)) rotateZ(var(--tiltZ)) translateY(calc(-1 * var(--amp))) translateZ(0);
     }
 
     100% {
-        transform: rotateY(-25deg) rotateX(8deg) translateY(0) translateZ(0);
+        transform: rotateY(var(--rotY)) rotateX(var(--rotX)) rotateZ(var(--tiltZ)) translateY(0) translateZ(0);
     }
 }
 
-/* 책 카드 */
+/* ===================== 책 카드 ===================== */
 .book {
     pointer-events: auto;
     position: relative;
@@ -198,7 +234,6 @@ body {
     z-index: 35;
     overflow: visible;
     isolation: isolate;
-    /* 스택 컨텍스트 안정화 */
 }
 
 .book img {
@@ -211,7 +246,6 @@ body {
     aspect-ratio: 780 / 1080;
 }
 
-/* hover 효과 (클래스 버전도 아래에 추가) */
 .book:hover,
 .book.is-hovered {
     transform: translateY(-0.8vw) scale(1.18) translateZ(5vw);
@@ -219,12 +253,11 @@ body {
     box-shadow: 0 25px 45px rgba(0, 0, 0, 0.7);
 }
 
-/* ==== 널널한 호버 패드(카드 아래로 확장) ==== */
+/* 널널한 호버 패드 */
 .book {
     --pad-x: 10%;
     --pad-top: 0%;
     --pad-bottom: 32%;
-    /* 아래 여유 구간: 필요 시 40~50%까지 */
 }
 
 .book::after {
@@ -234,15 +267,10 @@ body {
     right: calc(-1 * var(--pad-x));
     top: calc(-1 * var(--pad-top));
     bottom: calc(-1 * var(--pad-bottom) * -1);
-    /* 아래로 확장 */
     pointer-events: auto;
-    /* 이 영역도 호버 판정에 포함 */
     background: transparent;
     z-index: 1;
 }
-
-/* 디버그용: 실제 패드 윤곽 보고 싶으면 잠깐 켜기 */
-/* .book::after { outline: 1px dashed rgba(255,255,255,.25); } */
 
 /* ===================== 이벤트 통과 옵션 ===================== */
 .info-panel.overlay-pass {
@@ -264,4 +292,23 @@ body {
     body {
         overflow-y: auto;
     }
+}
+
+.project-title {
+    width: clamp(220px, 26vw, 690px);
+    height: clamp(75px, 9vw, 235px);
+    object-fit: contain;
+    display: block;
+    margin-bottom: 1.2vw;
+    transition: opacity 150ms ease;
+    will-change: opacity;
+}
+
+.project-title.fade-out {
+    opacity: 0;
+}
+
+.project-title.no-logo {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1.5px dashed rgba(255, 255, 255, 0.4);
 }
