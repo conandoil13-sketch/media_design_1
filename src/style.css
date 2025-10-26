@@ -1,0 +1,267 @@
+/* ===================== 기본 세팅 ===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Apple SD Gothic Neo", sans-serif;
+    background-color: #000;
+    color: #fff;
+    overflow: hidden;
+    /* 페이지 스크롤만 막음 (클리핑 아님) */
+}
+
+/* ===================== 비네트 ===================== */
+/* 비네트는 순수 시각효과: 카드보다 아래 */
+.vignette {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(ellipse at center, transparent 60%, rgba(0, 0, 0, 0.8) 100%);
+    z-index: 20;
+    /* 카드가 이보다 위 */
+}
+
+/* ===================== 전체 레이아웃 ===================== */
+.layout {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: clamp(3.5vw, 5.5vw, 110px);
+    padding: clamp(2rem, 4vw, 4rem);
+    height: 100%;
+    overflow: visible;
+    /* 🔥 클리핑 방지 */
+}
+
+/* ===================== 왼쪽 정보 패널 ===================== */
+.info-panel {
+    width: clamp(300px, 20vw, 480px);
+    position: relative;
+    z-index: 100;
+    /* 기본적으로 상단 */
+}
+
+.project-title {
+    width: clamp(240px, 16vw, 420px);
+    margin-bottom: 1.2vw;
+    display: block;
+}
+
+.text-box {
+    line-height: 1.6;
+    font-size: clamp(14px, 0.9vw, 18px);
+    margin-bottom: 2vw;
+    transition: opacity 0.45s ease;
+    opacity: 1;
+}
+
+.text-box.fade {
+    opacity: 0;
+}
+
+.book-title {
+    font-size: clamp(18px, 1.3vw, 28px);
+    margin-top: 0.5vw;
+    font-weight: 600;
+}
+
+/* QR 박스 */
+.qr-box {
+    width: clamp(120px, 9vw, 220px);
+    height: clamp(120px, 9vw, 220px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fff;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+}
+
+.qr-box.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.qr-box img {
+    width: 90%;
+    height: auto;
+}
+
+/* ===================== 3D 책 그리드 ===================== */
+.book-grid {
+    position: relative;
+    z-index: 200;
+    /* info-panel(100)보다 위로 */
+    display: flex;
+    gap: clamp(32px, 3.5vw, 70px);
+    perspective: 1600px;
+    transform-style: preserve-3d;
+    align-items: center;
+    transform: translateY(3.5vh);
+    opacity: 0;
+    /* 초기엔 숨김 */
+    transition: opacity 0.25s ease 0s;
+    /* 준비되면 페이드인 */
+    will-change: opacity, transform;
+    overflow: visible;
+    /* 🔥 클리핑 방지 */
+}
+
+.book-grid.grid-top {
+    z-index: 400;
+}
+
+/* 호버 중 최상단으로 끌어올림 */
+
+/* 초기 상태에서 애니메이션 정지 */
+.preinit .book-column {
+    animation-play-state: paused !important;
+}
+
+/* 준비 완료되면 그리드 표시 & 애니메이션 가동 */
+.ready .book-grid {
+    opacity: 1;
+}
+
+.anim-on .book-column {
+    animation-play-state: running;
+}
+
+/* 배경 dim(오버레이 대체) */
+.book-grid.dim .book {
+    filter: brightness(0.45) saturate(0.95);
+}
+
+.book-grid.dim .book:hover,
+.book-grid.dim .book.is-hovered {
+    filter: brightness(1.18) contrast(1.06);
+}
+
+/* ===================== 열 & 카드 ===================== */
+.book-column {
+    pointer-events: auto;
+    /* 부모에서 이벤트 막지 않기 */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(24px, 2.2vw, 52px);
+    transform: rotateY(-25deg) rotateX(8deg) scale(1.02) translateZ(0);
+    animation: float 85s linear infinite;
+    will-change: transform;
+    transition: transform 0.4s ease;
+    backface-visibility: hidden;
+    overflow: visible;
+    z-index: 31;
+}
+
+.book-column.active {
+    z-index: 300;
+}
+
+/* info-panel보다 위 */
+
+/* 세로 부드러운 이동 */
+@keyframes float {
+    0% {
+        transform: rotateY(-25deg) rotateX(8deg) translateY(0) translateZ(0);
+    }
+
+    50% {
+        transform: rotateY(-25deg) rotateX(8deg) translateY(-150px) translateZ(0);
+    }
+
+    100% {
+        transform: rotateY(-25deg) rotateX(8deg) translateY(0) translateZ(0);
+    }
+}
+
+/* 책 카드 */
+.book {
+    pointer-events: auto;
+    position: relative;
+    width: clamp(148px, 7.6vw, 210px);
+    height: clamp(205px, 11vw, 300px);
+    transition: transform 0.35s ease, filter 0.35s ease, box-shadow 0.35s ease;
+    cursor: pointer;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    z-index: 35;
+    overflow: visible;
+    isolation: isolate;
+    /* 스택 컨텍스트 안정화 */
+}
+
+.book img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    aspect-ratio: 780 / 1080;
+}
+
+/* hover 효과 (클래스 버전도 아래에 추가) */
+.book:hover,
+.book.is-hovered {
+    transform: translateY(-0.8vw) scale(1.18) translateZ(5vw);
+    z-index: 500;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.7);
+}
+
+/* ==== 널널한 호버 패드(카드 아래로 확장) ==== */
+.book {
+    --pad-x: 10%;
+    --pad-top: 0%;
+    --pad-bottom: 32%;
+    /* 아래 여유 구간: 필요 시 40~50%까지 */
+}
+
+.book::after {
+    content: "";
+    position: absolute;
+    left: calc(-1 * var(--pad-x));
+    right: calc(-1 * var(--pad-x));
+    top: calc(-1 * var(--pad-top));
+    bottom: calc(-1 * var(--pad-bottom) * -1);
+    /* 아래로 확장 */
+    pointer-events: auto;
+    /* 이 영역도 호버 판정에 포함 */
+    background: transparent;
+    z-index: 1;
+}
+
+/* 디버그용: 실제 패드 윤곽 보고 싶으면 잠깐 켜기 */
+/* .book::after { outline: 1px dashed rgba(255,255,255,.25); } */
+
+/* ===================== 이벤트 통과 옵션 ===================== */
+.info-panel.overlay-pass {
+    pointer-events: none;
+}
+
+/* ===================== 반응형 디테일 ===================== */
+@media (max-width: 1200px) {
+    .layout {
+        flex-direction: column;
+        align-items: flex-start;
+        overflow-y: auto;
+    }
+
+    .book-grid {
+        transform: none;
+    }
+
+    body {
+        overflow-y: auto;
+    }
+}
