@@ -71,7 +71,7 @@ const books = [
 모든 것이 무너져 가는 가운데,
 그는 오직 하나의 목표만을 품었다 —
 안전지대에 도착하는 것.
-`, image: "", qr: "./assets/logo/altana_qr.svg", logo: "./assets/logo/alttana_title.png"
+`, image: "", qr: "./assets/qrcode/altana_qr.svg", logo: "./assets/logo/alttana_title.png"
     },
     {
         title: "12", author: "이수경", synopsis: ` 어떤 사람은 매일 같은 질문을 반복한다.
