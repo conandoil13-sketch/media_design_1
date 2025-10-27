@@ -58,7 +58,7 @@ const books = [
 도전.
 
 최고의 아이돌을 향하여
-`, image: "", qr: "./assets/qrcode/heea_qr.svg", logo: "./assets/logo/HeeA_title.png"
+`, image: "./assets/images/heea_cover.png", qr: "./assets/qrcode/heea_qr.svg", logo: "./assets/logo/HeeA_title.png"
     },
     {
         title: "10", author: "배윤아", synopsis: `
@@ -68,7 +68,7 @@ const books = [
 연에게 보냅니다.
 
 답장을 보내겠습니까?
-`, image: "", qr: "./assets/qrcode/yoonin_qr.svg", logo: "./assets/logo/yoonin_title.png"
+`, image: "./assets/images/yoonin_cover.png", qr: "./assets/qrcode/yoonin_qr.svg", logo: "./assets/logo/yoonin_title.png"
     },
     {
         title: "11", author: "알따나", synopsis: `세상을 뒤흔드는 좀비 바이러스의 시작.
