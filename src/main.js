@@ -56,6 +56,7 @@ const books = [
 아무것도 할 수 없을 것처럼 작아진다.
 이 순간만큼은 당신에게 도전이 마냥 유쾌한 것이었으면 한다.
 도전.
+
 최고의 아이돌을 향하여
 `, image: "", qr: "./assets/qrcode/heea_qr.svg", logo: "./assets/logo/HeeA_title.png"
     },
