@@ -105,7 +105,7 @@ const books = [
 진실이 담겨있다!
 
 과연 당신은 그 끝에
-도달할 수 있을지...!
+도달할 수 있을지...
 `, image: "./assets/images/1004_cover.png", qr: "./assets/qrcode/1004_qr.svg", logo: "./assets/logo/1004_title.png"
     },
     {
