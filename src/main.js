@@ -12,7 +12,10 @@ const books = [
         title: "1", author: "강다은", synopsis: `맞잡은 손끝에서 푸름이 피어났다. 
         잿빛 세상에 번지는 작은 따스함의 기적.`, image: "", qr: "./assets/qrcode/dani_qr.svg", logo: "./assets/logo/dani_title.png"
     },
-    { title: "2", author: "김도경", synopsis: ``, image: "", qr: "./assets/qrcode/kate_qr.svg", logo: "" },
+    {
+        title: "2", author: "김도경", synopsis: `봄바람이 불어오는 새학기♪ 한 점 두 점 설렘이 모이면 커다란 로맨스가 시작돼!
+`, image: "", qr: "./assets/qrcode/kate_qr.svg", logo: "./assets/logo/kate_title.png"
+    },
     {
         title: "3", author: "김도윤", synopsis: `어느날, 실종되었던 오빠를 발견했다는 경찰의 전화가 걸려왔다.
 진짜 오빠일까? 이 별장은 뭐지?
