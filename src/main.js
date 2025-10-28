@@ -48,7 +48,7 @@ const books = [
 단서들아 모아 진실을 밝혀라-범인은 과연 누구일까? 
 `, image: "./assets/images/HAN_cover.png", qr: "./assets/qrcode/han_qr.svg", logo: "./assets/logo/HAN_title.png"
     },
-    { title: "8", author: "노은빈", synopsis: `우리 집 강아지, 레오. 내게 있던 레오의 흔적들이 자꾸만 사라진다. 같이 찍은 사진도, 레오의 네임태그도. 부식된 것도 햇빛에 바랜 것도 아닌데. 엄마, 나만 이러는 게 아니지?  `, image: "", qr: "./assets/qrcode/ian_qr.svg", logo: "./assets/logo/urian_title.png" },
+    { title: "8", author: "노은빈", synopsis: `우리 집 강아지, 레오. 내게 있던 레오의 흔적들이 자꾸만 사라진다. 같이 찍은 사진도, 레오의 네임태그도. 부식된 것도 햇빛에 바랜 것도 아닌데. 엄마, 나만 이러는 게 아니지?  `, image: "./assets/images/ian_cover.png", qr: "./assets/qrcode/ian_qr.svg", logo: "./assets/logo/urian_title.png" },
     {
         title: "9", author: "박희아", synopsis: `당신의 마지막 도전은 언제인가?
 우린 언제나 도전 앞에서 
