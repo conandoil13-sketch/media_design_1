@@ -94,7 +94,7 @@ const books = [
         title: "14", author: "이은진", synopsis: `덜컹덜컹, 다리 길이가 달라 흔들거리는 책상을 본 적이 있나요?
 제 역할을 다하고 쉬어가는 물건들의 휴양지,
 달그락 다락방으로 당신을 초대합니다.
-`, image: "", qr: "./assets/qrcode/dust_qr.svg", logo: "./assets/logo/eunjin_title.png"
+`, image: "./assets/images/dust_cover.png", qr: "./assets/qrcode/dust_qr.svg", logo: "./assets/logo/eunjin_title.png"
     },
     { title: "15", author: "이지우", synopsis: `의문스러운 살인사건. 수사관은 증거를 좇지만, 모든 조각이 어쩐지 낯설게 들어맞는다.`, image: "./assets/images/caseF_cover.png", qr: "./assets/qrcode/tomo_qr.svg", logo: "./assets/logo/case4_title.png" },
     {
