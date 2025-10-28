@@ -14,7 +14,7 @@ const books = [
     },
     {
         title: "2", author: "김도경", synopsis: `봄바람이 불어오는 새학기♪ 한 점 두 점 설렘이 모이면 커다란 로맨스가 시작돼!
-`, image: "", qr: "./assets/qrcode/kate_qr.svg", logo: "./assets/logo/kate_title.png"
+`, image: "./assets/images/kate_cover.png", qr: "./assets/qrcode/kate_qr.svg", logo: "./assets/logo/kate_title.png"
     },
     {
         title: "3", author: "김도윤", synopsis: `어느날, 실종되었던 오빠를 발견했다는 경찰의 전화가 걸려왔다.
@@ -81,7 +81,7 @@ const books = [
         title: "12", author: "이수경", synopsis: ` 어떤 사람은 매일 같은 질문을 반복한다.
  이 길이 정말 나의 길일까.
  옆에서 누군가는 아주 단순한 말을 건넨다.
- 그렇게까지 고민한다는 건 벌써 마음이 거기 가 있다는 거라고.`, image: "", qr: "./assets/qrcode/8ue_qr.svg", logo: "./assets/logo/LovH_title.png"
+ 그렇게까지 고민한다는 건 벌써 마음이 거기 가 있다는 거라고.`, image: "./assets/images/8ue_cover.png", qr: "./assets/qrcode/8ue_qr.svg", logo: "./assets/logo/LovH_title.png"
     },
     {
         title: "13", author: "이연우", synopsis: `살면서 두고두고 후회되는 순간들이 있습니다. 
