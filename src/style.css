@@ -385,7 +385,7 @@ body {
     /* 과도한 비율 이미지 안전망 */
 }
 
-/* 3) 타이틀/작가 – 좌상단 앵커 + 라인 클램프로 정확히 고정 */
+/* 3) 타이틀/작가 – 좌상단 앵커 + 라인 클램프로 정확히 고정!! */
 .book-title {
     line-height: var(--title-lh);
     display: -webkit-box;
