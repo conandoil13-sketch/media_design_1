@@ -10,11 +10,10 @@
 </head>
 
 <body>
-
     <!-- 1920×1080 고정 프레임(화면에 맞게 스케일만 변화) -->
     <div id="frame">
         <main class="layout">
-            <!-- 왼쪽 정보 패널: 원조 구조 그대로 -->
+            <!-- 왼쪽 정보 패널 -->
             <section class="info-panel">
                 <img id="titleLogo" class="project-title" src="./assets/images/mainTitle.png" alt="Project Title" />
 
@@ -30,9 +29,13 @@
 
                 <div class="qr-block">
                     <img id="qrImage" class="qr" src="./assets/qrcode/default.png" alt="QR Code" />
-                    <p id="hookingText" class="hook"></p>
-                    <p class="qr-callout">QR코드를 찍어서 지금 당장 데뷔!</p>
+                    <!-- ⛔ 독립 말풍선을 쓰므로 삭제(또는 display:none) -->
+                    <!-- <p id="hookingText" class="hook"></p> -->
+                    <p class="qr-callout">_</p>
                 </div>
+
+                <!-- ✅ 말풍선은 info-panel 안으로 이동 -->
+                <div id="hookBubble" class="hook-bubble" hidden></div>
             </section>
 
             <!-- 오른쪽: 절대배치 3장 겹치기 -->

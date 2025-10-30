@@ -120,8 +120,11 @@ body {
     margin: 0;
 }
 
+/* 기준 박스가 되어야 하므로 relative 보장 (이미 absolute여도 OK) */
 .qr-block {
-    align-self: end;
+    position: absolute;
+    left: 14px;
+    bottom: 38px;
     width: var(--qr-size);
 }
 
@@ -135,18 +138,37 @@ body {
 }
 
 .qr-block .hook {
-    width: var(--qr-size);
-    margin: 12px 0 8px;
-    text-align: center;
-    font-weight: 600;
+    position: absolute;
+    right: -12px;
+    /* QR 우상단에서 바깥쪽으로 약간 나가게 */
+    top: -12px;
+    transform: translate(0, -100%);
+    /* 위로 띄우기 */
+    margin: 0;
+    width: auto;
+    max-width: 320px;
+    padding: 10px 14px;
+    background: #fff;
+    color: #000;
+    font-weight: 700;
+    line-height: 1.35;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .45);
+    pointer-events: none;
+    z-index: 5;
 }
 
-.qr-block .qr-callout {
-    width: var(--qr-size);
-    margin: 0;
-    text-align: center;
-    font-weight: 800;
+.qr-block .hook::after {
+    content: "";
+    position: absolute;
+    right: 12px;
+    top: 100%;
+    border-width: 10px 10px 0 10px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, .25));
 }
+
 
 /* ===== 스테이지 (절대 배치 겹치기) ===== */
 .stage {
@@ -241,4 +263,77 @@ body {
     /* 딱 고정 */
     width: var(--qr-size);
     margin: 0;
+}
+
+/* 말풍선이 흐름에 들어가지 않도록 절대배치 + 숨김 처리 */
+.hook-bubble[hidden] {
+    display: none !important;
+}
+
+.hook-bubble {
+    position: absolute !important;
+    /* ★ 그리드에서 완전 분리 */
+    z-index: 6;
+    max-width: 320px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    background: #42f722;
+    color: #000;
+    font-weight: 700;
+    line-height: 1.35;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .45);
+    pointer-events: none;
+    font-size: clamp(22px, 1.05vw, 32px);
+    /* <- 원하는 크기로 조절 */
+    line-height: 1.45;
+    letter-spacing: 0.01em;
+    /* QR 우상단 기준으로 살짝 밖으로—QR 좌표(14,38) + QR 크기 */
+    left: calc(14px + var(--qr-size) + 160px);
+    bottom: calc(38px + var(--qr-size) + 14px);
+    transform: translate(-100%, 0);
+    /* 말풍선의 오른쪽 아래 모서리가 그 점을 향함 */
+}
+
+.hook-bubble::after {
+    content: "";
+    position: absolute;
+
+    bottom: -9.5px;
+    border-width: 10px 10px 0 10px;
+    border-style: solid;
+    border-color: #42f722 transparent transparent transparent;
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, .25));
+    left: 40px;
+}
+
+/* ✅ QR 하단 텍스트/옛 훅 전부 강제 숨김 */
+.qr-block .qr-callout,
+.qr-block .hook,
+#hookingText {
+    display: none !important;
+}
+
+/* 작가 이름(Author) 타이포 업 */
+.text-box .sub {
+    font-size: clamp(32px, 1.4vw, 44px);
+    /* ← 크기 조절 */
+    line-height: 1.25;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    margin: 4px 0 10px;
+    /* 제목과 간격 */
+}
+
+/* 시놉시스(본문) 타이포 살짝 키우기 */
+.text-box .desc {
+    font-size: clamp(20px, 1.05vw, 26px);
+    /* 기존 18px → 약간 업 */
+    line-height: 1.6;
+    /* 읽기 좋은 행간 유지 */
+    letter-spacing: 0.005em;
+}
+
+.hook-bubble {
+    white-space: pre-line;
+    /* ← 줄바꿈 유지 + 공백은 일반적으로 처리 */
 }
