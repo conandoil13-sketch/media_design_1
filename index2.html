@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hypertext Anthology</title>
+    <link rel="stylesheet" href="https://use.typekit.net/wra6gxt.css">
+    <link rel="stylesheet" href="./src/style2.css" />
+</head>
+
+<body>
+
+    <!-- 1920×1080 고정 프레임(화면에 맞게 스케일만 변화) -->
+    <div id="frame">
+        <main class="layout">
+            <!-- 왼쪽 정보 패널: 원조 구조 그대로 -->
+            <section class="info-panel">
+                <img id="titleLogo" class="project-title" src="./assets/images/mainTitle.png" alt="Project Title" />
+
+                <div id="infoBox" class="text-box">
+                    <p class="sub">Media Design 1 - 05</p>
+                    <h2 class="book-title">Hypertext Anthology</h2>
+                    <p class="desc">
+                        디지털 환경에서 ‘읽기’는 선형적이지 않습니다.<br />
+                        링크를 따라가며 페이지를 건너뛰고, 자신의 선택으로 서사의 순서를 구성합니다.<br /><br />
+                        <strong>Hypertext Anthology</strong>는 비선형적 읽기의 구조를 직접 설계해보는 실험입니다.
+                    </p>
+                </div>
+
+                <div class="qr-block">
+                    <img id="qrImage" class="qr" src="./assets/qrcode/default.png" alt="QR Code" />
+                    <p id="hookingText" class="hook"></p>
+                    <p class="qr-callout">QR코드를 찍어서 지금 당장 데뷔!</p>
+                </div>
+            </section>
+
+            <!-- 오른쪽: 절대배치 3장 겹치기 -->
+            <section class="stage" aria-live="polite">
+                <button class="nav prev" aria-label="이전">〈</button>
+                <button class="nav next" aria-label="다음">〉</button>
+
+                <img class="poster prev" alt="" draggable="false">
+                <img class="poster current" alt="" draggable="false">
+                <img class="poster next" alt="" draggable="false">
+            </section>
+        </main>
+    </div>
+
+    <script src="./src/main2.js"></script>
+</body>
+
+</html>
