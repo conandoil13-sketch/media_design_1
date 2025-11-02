@@ -6,8 +6,7 @@ const books = [
         image: "",
         qr: "./assets/qrcode/dani_qr.svg",
         logo: "./assets/logo/dani_title.png",
-        hooking: `따스한 이야기를 
-        만나보세요.`
+        hooking: `따스한 이야기를 만나보세요.`
     },
     {
         title: "2",
@@ -23,9 +22,9 @@ const books = [
         title: "3",
         author: "김도윤",
         synopsis: `어느날, 실종되었던 오빠를 발견했다는 경찰의 전화가 걸려왔다.
-진짜 오빠일까? 이 별장은 뭐지?
+        진짜 오빠일까? 이 별장은 뭐지?
 `,
-        image: "./assets/images/yoon_cover.png",
+        image: "./assets/images/yoon_cover.jpg",
         qr: "./assets/qrcode/yoon_qr.svg",
         logo: "./assets/logo/yoon_title.png",
         hooking: `사라진 오빠를 찾아 나서자.`
@@ -33,7 +32,8 @@ const books = [
     {
         title: "4",
         author: "김서진",
-        synopsis: `죽음은 인간을 어디서부터 어디로 가게 만듭니까?
+        synopsis: `죽음은 인간을 어디서부터 어디로 
+        가게 만듭니까?
         죽음과 상실은 동의어입니까?
 
         영원히 답을 내지 못할 질문에 대해 말해보자.
@@ -48,7 +48,8 @@ const books = [
         author: "김시우",
         synopsis: `아 머리야…
 
-머리가 깨질 듯 아파오고 아무 기억이 나지 않는다.
+머리가 깨질 듯 아파오고 
+아무 기억이 나지 않는다.
 여기는 어디고 오늘은 대체 며칠이지?
 `,
         image: "./assets/images/siu_cover.png",
@@ -151,7 +152,8 @@ const books = [
         author: "이연우",
         synopsis: `살면서 두고두고 후회되는 순간들이 있습니다.
 그때 내가 더 잘했더라면, 그런일은 일어나지 않았을텐데… 하는 순간들.
-만약 그때로 돌아간다면 나는 어떤 선택을 할까요?
+만약 그때로 돌아간다면 
+나는 어떤 선택을 할까요?
 당신은 돌아가고 싶은 순간이 있나요?
 `, image: "./assets/images/yeonWoo_cover.png",
         qr: "./assets/qrcode/yeonwoo_qr.svg",
@@ -192,15 +194,16 @@ const books = [
 `, image: "./assets/images/1004_cover.png",
         qr: "./assets/qrcode/1004_qr.svg",
         logo: "./assets/logo/1004_title.png",
-        hooking: `사건의 진상에 
-        도달해보세요!`
+        hooking: `사건의 진상에 도달해보세요!`
     },
     {
         title: "17",
         author: "진온유",
         synopsis: `당신은 질문을 받는다.
-모든 불편함이 제거된 세계, 결함 없는 새로움이 약속된 세계.
-그 완벽함 속에서, 당신은 여전히 ‘당신’일 수 있을까?
+        모든 불편함이 제거된 세계, 
+        결함 없는 새로움이 약속된 세계.
+그 완벽함 속에서, 
+당신은 여전히 ‘당신’일 수 있을까?
 `, image: "./assets/images/nonew_cover.png", qr: "./assets/qrcode/nonew_qr.svg", logo: "./assets/logo/nonew_title.png",
         hooking: `새로운 세계로.`
     },
