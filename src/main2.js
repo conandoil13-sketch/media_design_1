@@ -6,7 +6,7 @@ const books = [
         image: "",
         qr: "./assets/qrcode/dani_qr.svg",
         logo: "./assets/logo/dani_title.png",
-        hooking: `QR을 찍어 따스한 이야기를 
+        hooking: `따스한 이야기를 
         만나보세요.`
     },
     {
@@ -17,7 +17,7 @@ const books = [
         image: "./assets/images/kate_cover.png",
         qr: "./assets/qrcode/kate_qr.svg",
         logo: "./assets/logo/kate_title.png",
-        hooking: `QR을 찍어 달콤한 로맨스를 즐겨보세요!(◍•ᴗ•◍)❤`
+        hooking: `달콤한 로맨스를 즐겨보세요!(◍•ᴗ•◍)❤`
     },
     {
         title: "3",
@@ -25,10 +25,10 @@ const books = [
         synopsis: `어느날, 실종되었던 오빠를 발견했다는 경찰의 전화가 걸려왔다.
 진짜 오빠일까? 이 별장은 뭐지?
 `,
-        image: "",
+        image: "./assets/images/yoon_cover.png",
         qr: "./assets/qrcode/yoon_qr.svg",
         logo: "./assets/logo/yoon_title.png",
-        hooking: `QR을 찍고 사라진 오빠를 찾아 나서자.`
+        hooking: `사라진 오빠를 찾아 나서자.`
     },
     {
         title: "4",
@@ -41,7 +41,7 @@ const books = [
         image: "./assets/images/sin_cover.png",
         qr: "./assets/qrcode/sin_qr.svg",
         logo: "./assets/logo/sin_title-1.png",
-        hooking: `QR을 찍어 영원히 답을 내지 못할 생각에 빠져봅시다.`
+        hooking: `영원히 답을 내지 못할 생각에 빠져봅시다.`
     },
     {
         title: "5",
@@ -54,7 +54,7 @@ const books = [
         image: "./assets/images/siu_cover.png",
         qr: "./assets/qrcode/shu_qr.svg",
         logo: "./assets/logo/siu_title.png",
-        hooking: `QR을 찍고 기억을 되찾아보세요!`
+        hooking: `기억을 되찾아보세요!`
     },
     {
         title: "6",
@@ -67,8 +67,7 @@ const books = [
         image: "./assets/images/zero_cover.png",
         qr: "./assets/qrcode/zero_qr.svg",
         logo: "./assets/logo/zero_title.png",
-        hooking: `QR을 찍어 사라진 아들을 
-찾아주세요.`
+        hooking: `사라진 아들을 찾아주세요.`
     },
     {
         title: "7",
@@ -80,7 +79,7 @@ const books = [
         image: "./assets/images/HAN_cover.png",
         qr: "./assets/qrcode/han_qr.svg",
         logo: "./assets/logo/HAN_title.png",
-        hooking: `QR을 찍고 사건의 진실을 밝혀보자!`
+        hooking: `사건의 진실을 밝혀보자!`
     },
     {
         title: "8",
@@ -90,7 +89,7 @@ const books = [
         image: "./assets/images/ian_cover.png",
         qr: "./assets/qrcode/ian_qr.svg",
         logo: "./assets/logo/urian_title.png",
-        hooking: `QR을 찍어 레오를 기억해주세요.`
+        hooking: `레오를 기억해주세요.`
     },
     {
         title: "9",
@@ -105,7 +104,7 @@ const books = [
 `, image: "./assets/images/heea_cover.png",
         qr: "./assets/qrcode/heea_qr.svg",
         logo: "./assets/logo/HeeA_title.png",
-        hooking: `QR을 찍고 데뷔조가 되어보자!`
+        hooking: `데뷔조가 되어보자!`
     },
     {
         title: "10",
@@ -121,7 +120,7 @@ const books = [
         image: "./assets/images/yoonin_cover.png",
         qr: "./assets/qrcode/yoonin_qr.svg",
         logo: "./assets/logo/yoonin_title.png",
-        hooking: `QR을 찍어 연에게 편지를 전해보세요!`
+        hooking: `연에게 편지를 전해보세요!`
     },
     {
         title: "11",
@@ -130,10 +129,10 @@ const books = [
 모든 것이 무너져 가는 가운데,
 그는 오직 하나의 목표만을 품었다 —
 안전지대에 도착하는 것.
-`, image: "",
+`, image: "./assets/images/altana_cover.png",
         qr: "./assets/qrcode/altana_qr.svg",
         logo: "./assets/logo/alttana_title.png",
-        hooking: `QR을 찍고 좀비 아포칼립스 속으로!`
+        hooking: `좀비 아포칼립스 속으로!`
     },
     {
         title: "12",
@@ -145,7 +144,7 @@ const books = [
         image: "./assets/images/8ue_cover.png",
         qr: "./assets/qrcode/8ue_qr.svg",
         logo: "./assets/logo/LovH_title.png",
-        hooking: `QR을 찍고 나의 길을 고민해봅시다.`
+        hooking: `나의 길을 고민해봅시다.`
     },
     {
         title: "13",
@@ -157,7 +156,7 @@ const books = [
 `, image: "./assets/images/yeonWoo_cover.png",
         qr: "./assets/qrcode/yeonwoo_qr.svg",
         logo: "./assets/logo/2023_title.png",
-        hooking: `QR을 찍고 과거로 돌아가봅시다.`
+        hooking: `과거로 돌아가봅시다.`
     },
     {
         title: "14",
@@ -168,7 +167,7 @@ const books = [
 `, image: "./assets/images/dust_cover.png",
         qr: "./assets/qrcode/dust_qr.svg",
         logo: "./assets/logo/eunjin_title.png",
-        hooking: `QR을 찍어 달그락 다락방으로 가보세요!`
+        hooking: `달그락 다락방으로 가보자!`
     },
     {
         title: "15",
@@ -177,7 +176,7 @@ const books = [
         image: "./assets/images/caseF_cover.png",
         qr: "./assets/qrcode/tomo_qr.svg",
         logo: "./assets/logo/case4_title.png",
-        hooking: `QR을 찍어 의문스러운 살인사건의 진실을 밝혀보세요!`
+        hooking: `살인사건의 진실을 밝혀보세요!`
     },
     {
         title: "16",
@@ -193,7 +192,7 @@ const books = [
 `, image: "./assets/images/1004_cover.png",
         qr: "./assets/qrcode/1004_qr.svg",
         logo: "./assets/logo/1004_title.png",
-        hooking: `QR을 찍고 사건의 진상에 
+        hooking: `사건의 진상에 
         도달해보세요!`
     },
     {
@@ -203,7 +202,7 @@ const books = [
 모든 불편함이 제거된 세계, 결함 없는 새로움이 약속된 세계.
 그 완벽함 속에서, 당신은 여전히 ‘당신’일 수 있을까?
 `, image: "./assets/images/nonew_cover.png", qr: "./assets/qrcode/nonew_qr.svg", logo: "./assets/logo/nonew_title.png",
-        hooking: `QR을 찍고 새로운 세계로.`
+        hooking: `새로운 세계로.`
     },
     {
         title: "18",
@@ -212,8 +211,7 @@ const books = [
         image: "./assets/images/letter_cover.jpg",
         qr: "./assets/qrcode/chacha_qr.svg",
         logo: "./assets/logo/1026_title.png",
-        hooking: `QR을 찍어 행운의 편지의 비밀을 
-        밝혀보세요!`
+        hooking: `행운의 편지의 비밀을 밝혀보세요!`
     },
     {
         title: "19",
@@ -223,7 +221,7 @@ const books = [
 `, image: "./assets/images/yewon_cover.png",
         qr: "./assets/qrcode/yewon_qr.svg",
         logo: "./assets/logo/yewon_title.png",
-        hooking: `QR을 찍어 살인사건의 범인을 밝혀보세요!`
+        hooking: `살인사건의 범인을 밝혀보세요!`
     },
     {
         title: "20",
@@ -234,7 +232,7 @@ const books = [
 그런데... 이건 단순한 시스템이 아닌 것 같다….?
 어서 이곳을 벗어나야 해!
 `, image: "./assets/images/jiso_cover.png", qr: "./assets/qrcode/jiso_qr.svg", logo: "./assets/logo/jisoo_title.png",
-        hooking: `QR을 찍어 숨겨진 페이지의 비밀을 밝혀보세요!`
+        hooking: `숨겨진 페이지의 비밀을 밝혀보세요!`
     },
 ];
 /* ===== 데이터 =====
