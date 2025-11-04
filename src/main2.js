@@ -235,7 +235,7 @@ const books = [
 그런데... 이건 단순한 시스템이 아닌 것 같다…?
 어서 이곳을 벗어나야 해!
 `, image: "./assets/images/jiso_cover.png", qr: "./assets/qrcode/jiso_qr.svg", logo: "./assets/logo/jisoo_title.png",
-        hooking: `숨겨진 페이지의 비밀을 밝혀보세요!`
+        hooking: `숨겨진 페이지의 비밀을 밝혀보자!`
     },
 ];
 /* ===== 데이터 =====
