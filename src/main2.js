@@ -221,7 +221,7 @@ const books = [
         author: "최예원",
         synopsis: `어느 연구소의 실험실에서 살인사건이 일어났다.
 사건파일을 살펴보며 용의자 중 누가 범인인지 밝혀내보자.
-`, image: "./assets/images/yewon_cover.png",
+`, image: "./assets/images/Yewon_cover.png",
         qr: "./assets/qrcode/yewon_qr.svg",
         logo: "./assets/logo/yewon_title.png",
         hooking: `살인사건의 범인을 밝혀보세요!`
