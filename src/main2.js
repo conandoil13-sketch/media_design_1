@@ -3,7 +3,7 @@ const books = [
         title: "1", author: "강다은",
         synopsis: `맞잡은 손끝에서 푸름이 피어났다. 
         잿빛 세상에 번지는 작은 따스함의 기적.`,
-        image: "",
+        image: "./assets/images/dani_cover.png",
         qr: "./assets/qrcode/dani_qr.svg",
         logo: "./assets/logo/dani_title.png",
         hooking: `따스한 이야기를 만나보세요.`
